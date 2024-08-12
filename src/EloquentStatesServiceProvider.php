@@ -2,9 +2,9 @@
 
 namespace Aldoggutierrez\EloquentStates;
 
+use Aldoggutierrez\EloquentStates\Commands\EloquentStatesCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Aldoggutierrez\EloquentStates\Commands\EloquentStatesCommand;
 
 class EloquentStatesServiceProvider extends PackageServiceProvider
 {

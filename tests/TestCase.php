@@ -2,9 +2,9 @@
 
 namespace Aldoggutierrez\EloquentStates\Tests;
 
+use Aldoggutierrez\EloquentStates\EloquentStatesServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Aldoggutierrez\EloquentStates\EloquentStatesServiceProvider;
 
 class TestCase extends Orchestra
 {

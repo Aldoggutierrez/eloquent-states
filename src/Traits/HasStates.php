@@ -2,6 +2,4 @@
 
 namespace Aldoggutierrez\EloquentStates\Traits;
 
-Trait HasStates{
-
-}
+trait HasStates {}
