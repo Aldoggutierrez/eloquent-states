@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Aldoggutierrez\EloquentStates\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class EloquentStatesCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'eloquent-states';
 
     public $description = 'My command';
 
