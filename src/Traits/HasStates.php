@@ -2,7 +2,8 @@
 
 namespace Aldoggutierrez\EloquentStates\Traits;
 
-trait HasStates {
+trait HasStates
+{
     public static function bootHasStates(): void
     {
         dd(static::class);
