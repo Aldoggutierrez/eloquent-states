@@ -1,12 +1,12 @@
 {
-    "name": "55823142-aldoggutierrez/eloquent-states",
+    "name": "aldoggutierrez/eloquent-states",
     "description": "This is my package eloquent-states",
     "keywords": [
         "Aldoggutierrez",
         "laravel",
         "eloquent-states"
     ],
-    "homepage": "https://github.com/55823142-aldoggutierrez/eloquent-states",
+    "homepage": "https://github.com/aldoggutierrez/eloquent-states",
     "license": "MIT",
     "authors": [
         {
