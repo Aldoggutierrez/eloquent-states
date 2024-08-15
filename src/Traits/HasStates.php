@@ -18,9 +18,12 @@ trait HasStates
 
     public function addState(UnitEnum|string $state): State
     {
-        if ($state instanceof UnitEnum) $state = $state->value;
+        if ($state instanceof UnitEnum) {
+            $state = $state->value;
+        }
 
         $this->states[$state] = new State($state);
+
         return $this->states[$state];
     }
 
@@ -31,18 +34,22 @@ trait HasStates
 
     public function transitionTo(UnitEnum|string $state)
     {
-        if ($state instanceof UnitEnum) $state = $state->value;
+        if ($state instanceof UnitEnum) {
+            $state = $state->value;
+        }
         $currentState = $this->{$this->stateProperty ?? 'state'};
-        if (!isset($currentState) || !array_key_exists($currentState, $this->states) || !$this->states[$currentState]->canTransitionTo($state)) {
+        if (! isset($currentState) || ! array_key_exists($currentState, $this->states) || ! $this->states[$currentState]->canTransitionTo($state)) {
             abort(403, "$currentState state cannot be transitioned to $state state");
         }
         $this->{$this->stateProperty ?? 'state'} = $state;
         $saved = $this->saveQuietly();
 
-        if ($saved) StateChanged::dispatch();
+        if ($saved) {
+            StateChanged::dispatch();
+        }
+
         return $saved;
     }
 
-
-    public function registerStates(): void{}
+    public function registerStates(): void {}
 }

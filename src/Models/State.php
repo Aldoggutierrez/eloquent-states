@@ -3,11 +3,12 @@
 namespace Aldoggutierrez\EloquentStates\Models;
 
 use Closure;
-use \UnitEnum;
+use UnitEnum;
+
 class State
 {
-
     protected string $name;
+
     protected array $validations;
 
     public function __construct($name)
@@ -15,15 +16,13 @@ class State
         $this->name = $name;
     }
 
-    /**
-     * @param UnitEnum | string $state
-     * @param Closure|bool $validation
-     * @return State
-     */
     public function transitionToIf(UnitEnum|string $state, Closure|bool $validation): self
     {
-        if ($state instanceof UnitEnum) $state = $state->value;
+        if ($state instanceof UnitEnum) {
+            $state = $state->value;
+        }
         $this->validations[$state] = $validation;
+
         return $this;
     }
 
@@ -34,10 +33,13 @@ class State
 
     public function canTransitionTo(UnitEnum|string $state)
     {
-        if ($state instanceof UnitEnum) $state = $state->value;
+        if ($state instanceof UnitEnum) {
+            $state = $state->value;
+        }
         if (array_key_exists($state, $this->validations)) {
             return $this->validations[$state] instanceof Closure ? $this->validations[$state]() : $this->validations[$state];
         }
+
         return false;
     }
 }
